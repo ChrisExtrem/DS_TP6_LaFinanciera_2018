@@ -10,6 +10,7 @@ import Datos.Persistencia;
 import DatosExternos.Veraz;
 import Dominio.Credito;
 import Dominio.Empleado;
+import Dominio.Plan;
 import Dominio.Sesion;
 
 /**
@@ -27,6 +28,12 @@ public class ControladorSolicitarCredito{
         if(!deuda) tc=cl.obtenerCreditosActivos(); //Si No Hay deuda(siendo Deuda False) ingresa
         Empleado e=Sesion.getEmpleado();
         if(!deuda && tc<=2) cr= new Credito(cl,e); //Crear Credito
+    }
+    
+    public static void ingresarCredito(int numero, float capital){
+        Plan p = Persistencia.buscarPlanByNumero(numero);
+        if(capital<=50000) cr.agregarPlan(p,capital);
+        
     }
     
 }

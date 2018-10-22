@@ -10,5 +10,25 @@ package Dominio;
  * @author Admin
  */
 public class Plan {
+    //Atributos
+    private int cuotas;
+    private float interes;
+
+    public int getCuotas() {
+        return cuotas;
+    }
+
+    public void setCuotas(int cuotas) {
+        this.cuotas = cuotas;
+    }
+
+    public float getInteres() {
+        return interes;
+    }
+
+    public void setInteres(float interes) {
+        this.interes = interes;
+    }
+    
     
 }

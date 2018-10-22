@@ -6,6 +6,7 @@
 package Datos;
 
 import Dominio.Cliente;
+import Dominio.Plan;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -25,6 +26,10 @@ public class Persistencia {
             if(c.getDni()==dni) cr=c;
         }
         return cr;
+    }
+
+    public static Plan buscarPlanByNumero(int numero) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

@@ -18,6 +18,9 @@ public class Credito {
     private Cliente cliente;
     private Empleado empleado;
     private ArrayList<Cuota> cuotas;
+    private int cantidadCuotas;
+    private float interes;
+    private float capital;
 
     public Credito(Cliente cl, Empleado e) {
         this.cliente=cl;
@@ -48,9 +51,50 @@ public class Credito {
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
     }
+
+    public float getInteres() {
+        return interes;
+    }
+
+    public void setInteres(float interes) {
+        this.interes = interes;
+    }
+
+    public void agregarPlan(Plan p,float capital) {
+        float i = p.getInteres();
+        int cc = p.getCuotas();
+        this.setCapital(capital);
+        this.setInteres(i);
+        this.setCantidadCuotas(cc);
+        float total = this.calcularTotal(capital,interes);
+        float totalCuota = this.calcularTotalCuota(total,cc);
+        for(int j=0;j<cc;j++){
+            Cuota cu = new Cuota(totalCuota);
+            cuotas.add(cu);
+        }
+    }
     
-    
-    
-    
-    
+    public float getCapital(){
+        return capital;
+    }
+
+    public void setCapital(float capital) {
+        this.capital = capital;
+    }
+
+    public int getCantidadCuotas() {
+        return cantidadCuotas;
+    }
+
+    public void setCantidadCuotas(int cantidadCuotas) {
+        this.cantidadCuotas = cantidadCuotas;
+    }
+
+    private float calcularTotal(float capital, float interes) {
+        return capital+capital*interes;
+    }
+
+    private float calcularTotalCuota(float total, int cc) {
+        return total/cc;
+    }
 }

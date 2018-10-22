@@ -10,5 +10,11 @@ package Dominio;
  * @author Admin
  */
 public class Cuota {
+    //Atributos
+    float totalCuota;
+    
+    Cuota(float totalCuota) {
+        this.totalCuota=totalCuota;
+    }
     
 }
