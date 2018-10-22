@@ -3,22 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Datos;
-
-import Dominio.Cliente;
-import java.util.ArrayList;
+package Dominio;
 
 /**
  *
  * @author Admin
  */
-public class Persistencia {
+public class Sesion {
 
-    //Atributos
-    private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-    
-    //Metodos
-    public static Cliente buscarClienteByDni(int dni) {
+    public static Empleado getEmpleado() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
