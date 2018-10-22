@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DatosExternos;
+package Dominio;
 
 /**
  *
  * @author Admin
  */
-public class Veraz {
-
-    public static boolean verificarEstado(int dni) {
-        return false;
-    }
-    
+public enum Estado {
+    Pendiente,
+    Finalizado,
+    Moroso
 }

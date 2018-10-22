@@ -5,14 +5,33 @@
  */
 package Dominio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Admin
  */
 public class Cliente {
+    
+    //Atributos
+    private int dni;
+    private ArrayList<Credito> creditos;
 
-    public int obtenerCreditosActivos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int obtenerCreditosActivos(){
+        int resultado=0;
+        for(Credito c : creditos){
+            if(c.getEstado()==Estado.Moroso) resultado++;
+        }
+        return resultado;
     }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+    
     
 }

@@ -7,6 +7,7 @@ package Datos;
 
 import Dominio.Cliente;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -15,11 +16,15 @@ import java.util.ArrayList;
 public class Persistencia {
 
     //Atributos
-    private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+    private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
     
     //Metodos
     public static Cliente buscarClienteByDni(int dni) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Cliente cr = null;
+        for(Cliente c : clientes){
+            if(c.getDni()==dni) cr=c;
+        }
+        return cr;
     }
     
 }
