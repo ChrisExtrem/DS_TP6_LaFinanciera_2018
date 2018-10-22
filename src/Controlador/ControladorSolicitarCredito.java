@@ -26,7 +26,7 @@ public class ControladorSolicitarCredito{
         int tc=0;
         if(!deuda) tc=cl.obtenerCreditosActivos(); //Si No Hay deuda(siendo Deuda False) ingresa
         Empleado e=Sesion.getEmpleado();
-        if(!deuda && tc<=2) cr= new Credito();
+        if(!deuda && tc<=2) cr= new Credito(cl,e); //Crear Credito
     }
     
 }
