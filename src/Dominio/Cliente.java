@@ -32,6 +32,14 @@ public class Cliente {
     public void setDni(int dni) {
         this.dni = dni;
     }
+
+    public ArrayList<Cuota> buscarCuotasImpagas() {
+        ArrayList<Cuota> lista = new ArrayList<Cuota>();
+        for(Credito c : creditos){
+            lista.addAll(c.buscarCuotasImpagas());
+        }
+        return lista;
+    }
     
     
 }

@@ -11,6 +11,7 @@ package Dominio;
  */
 public class Plan {
     //Atributos
+    private int numero;
     private int cuotas;
     private float interes;
 
@@ -29,6 +30,16 @@ public class Plan {
     public void setInteres(float interes) {
         this.interes = interes;
     }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    
+    
     
     
 }

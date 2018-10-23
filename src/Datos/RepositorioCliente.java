@@ -6,16 +6,13 @@
 package Datos;
 
 import Dominio.Cliente;
-import Dominio.Plan;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  *
  * @author Admin
  */
-public class Persistencia {
-
+public class RepositorioCliente {
     //Atributos
     private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
     
@@ -27,9 +24,4 @@ public class Persistencia {
         }
         return cr;
     }
-
-    public static Plan buscarPlanByNumero(int numero) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

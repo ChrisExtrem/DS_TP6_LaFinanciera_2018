@@ -97,4 +97,16 @@ public class Credito {
     private float calcularTotalCuota(float total, int cc) {
         return total/cc;
     }
+
+    public void confirmar() {
+        this.setEstado(estado.Pendiente);
+    }
+    
+    public ArrayList<Cuota> buscarCuotasImpagas(){
+        ArrayList<Cuota> lista = new ArrayList<Cuota>();
+        for(Cuota c : cuotas){
+            if(!c.isPagada())   lista.add(c);
+        }
+        return lista;
+    }
 }

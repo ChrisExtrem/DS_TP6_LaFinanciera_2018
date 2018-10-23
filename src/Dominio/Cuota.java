@@ -11,10 +11,36 @@ package Dominio;
  */
 public class Cuota {
     //Atributos
-    float totalCuota;
+    private float totalCuota;
+    private int numeroCredito;
+    private boolean pagada;
     
     Cuota(float totalCuota) {
         this.totalCuota=totalCuota;
+    }
+
+    public float getTotalCuota() {
+        return totalCuota;
+    }
+
+    public void setTotalCuota(float totalCuota) {
+        this.totalCuota = totalCuota;
+    }
+
+    public int getNumeroCredito() {
+        return numeroCredito;
+    }
+
+    public void setNumeroCredito(int numeroCredito) {
+        this.numeroCredito = numeroCredito;
+    }
+
+    public boolean isPagada() {
+        return pagada;
+    }
+
+    public void setPagada(boolean pagada) {
+        this.pagada = pagada;
     }
     
 }

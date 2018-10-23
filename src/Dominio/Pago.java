@@ -5,10 +5,22 @@
  */
 package Dominio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Admin
  */
 public class Pago {
+    //Atributos
+    Cliente cliente;
+    Empleado empleado;
+    ArrayList<Cuota> cuotasPagadas;
+
+    public Pago(Cliente cl, Empleado e) {
+        this.cliente=cl;
+        this.empleado=e;
+        this.cuotasPagadas=new ArrayList<Cuota>();
+    }
     
 }

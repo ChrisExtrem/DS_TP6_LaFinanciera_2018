@@ -6,7 +6,8 @@
 package Controlador;
 
 import Dominio.Cliente;
-import Datos.Persistencia;
+import Datos.RepositorioCliente;
+import Datos.RepositorioPlan;
 import DatosExternos.Veraz;
 import Dominio.Credito;
 import Dominio.Empleado;
@@ -22,7 +23,7 @@ public class ControladorSolicitarCredito{
     private static Credito cr;
     //Metodos
     public static void ingresarCliente(int dni){
-        Cliente cl=Persistencia.buscarClienteByDni(dni);
+        Cliente cl=RepositorioCliente.buscarClienteByDni(dni);
         boolean deuda=Veraz.verificarEstado(dni); //Si hay deuda devuelve true, Si No hay deuda False
         int tc=0;
         if(!deuda) tc=cl.obtenerCreditosActivos(); //Si No Hay deuda(siendo Deuda False) ingresa
@@ -31,9 +32,12 @@ public class ControladorSolicitarCredito{
     }
     
     public static void ingresarCredito(int numero, float capital){
-        Plan p = Persistencia.buscarPlanByNumero(numero);
+        Plan p = RepositorioPlan.buscarPlanByNumero(numero);
         if(capital<=50000) cr.agregarPlan(p,capital);
-        
+    }
+    
+    public static void confirmarCredito(){
+        cr.confirmar();
     }
     
 }
