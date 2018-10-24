@@ -12,5 +12,17 @@ package Dominio;
 public enum Estado {
     Pendiente,
     Finalizado,
-    Moroso
+    Moroso;
+    
+    public static Estado getPendiente() {    
+        return Pendiente;
+    }
+
+    public static Estado getFinalizado() {
+        return Finalizado;
+    }
+
+    public static Estado getMoroso() {
+        return Moroso;
+    }
 }

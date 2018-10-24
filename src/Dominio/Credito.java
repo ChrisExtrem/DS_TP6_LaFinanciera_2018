@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Credito {
     
     //Atributos
+    private int numero;
     private Estado estado;
     private Cliente cliente;
     private Empleado empleado;
@@ -108,5 +109,37 @@ public class Credito {
             if(!c.isPagada())   lista.add(c);
         }
         return lista;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public ArrayList<Cuota> getCuotas() {
+        return cuotas;
+    }
+
+    public void setCuotas(ArrayList<Cuota> cuotas) {
+        this.cuotas = cuotas;
+    }
+
+    public Cuota buscarCuotaByNumero(int nroCuota) {
+        Cuota cu=null;
+        for(Cuota c : cuotas){
+            if(c.getNumero()==nroCuota) cu=c;
+        }
+        cu.calcularSubTotal();
+        
+        return cu;
+    }
+
+    void finalizar() {
+        ArrayList<Cuota> ci = this.buscarCuotasImpagas();
+        int cci=ci.size();
+        if(cci==0)  this.estado=estado.Finalizado;
     }
 }

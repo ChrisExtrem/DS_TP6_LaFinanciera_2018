@@ -11,9 +11,12 @@ package Dominio;
  */
 public class Cuota {
     //Atributos
+    private int numero;
     private float totalCuota;
     private int numeroCredito;
     private boolean pagada;
+    float subTotal;
+    float monto;
     
     Cuota(float totalCuota) {
         this.totalCuota=totalCuota;
@@ -40,7 +43,46 @@ public class Cuota {
     }
 
     public void setPagada(boolean pagada) {
-        this.pagada = pagada;
+        this.pagada=pagada;
+    }
+    
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setSubTotal(float subTotal){
+        this.subTotal=subTotal;
+    }
+    
+    public float getSubTotal(){
+        return this.subTotal;
+    }
+    
+    public float calcularSubTotal() {
+        float result=monto,i;
+        int dv = this.calcularDiasVencidos();
+        if(dv!=0){
+            i=this.calcularInteres(dv);
+            result=monto+monto*i;
+        }
+        this.setSubTotal(result);
+        return result;
+    }
+    
+    private float calcularInteres(int dv){
+        float resultado=0;
+        float i=Reglas.getInteresDiario();
+        resultado=dv*i;
+        return resultado;
+    }
+
+    private int calcularDiasVencidos() {
+        int resultado=0;
+        return resultado;
     }
     
 }

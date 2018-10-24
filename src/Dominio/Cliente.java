@@ -40,6 +40,26 @@ public class Cliente {
         }
         return lista;
     }
+
+    public Credito buscarCreditoByNumero(int nroCredito) {
+        Credito resultado=null;
+        for(Credito c : creditos){
+            if(c.getNumero()==nroCredito) resultado=c;
+        }
+        return resultado;
+    }
+
+    public Cuota obtenerCuotaDelCredito(int nroCuota, int nroCredito) {
+        Credito cr = this.buscarCreditoByNumero(nroCredito);
+        Cuota cu = cr.buscarCuotaByNumero(nroCuota);
+        return cu;
+    }
+
+    public void finalizarCreditos() {
+        for(Credito cr : creditos){
+            cr.finalizar();
+        }
+    }
     
     
 }
